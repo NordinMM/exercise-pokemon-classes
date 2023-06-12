@@ -23,11 +23,21 @@ class Pokemon {
         this.ataque = ataque
         this.defensa = defensa
     }
+    atacar(pokemon) {
+        let ataque = Math.floor(Math.random() *  this.ataque);
+        console.log(`${this.nombre} atacó a con ${ataque} puntos de deño.`);
+        
+        let defensa = Math.floor(Math.random() *  this.defensa);
+        console.log(`${pokemon.nombre} consigue una defensa de ${defensa} puntos de defensa.`);
+
+        let vida = pokemon.vida - (ataque - defensa);
+        console.log(`La salud de ${pokemon.nombre} es ahora de ${pokemon.vida - vida}`)
+    }
 }
-
 let bulbasaur = new Pokemon(1, "Bulbasaur", ['Grass', 'Poison'], 45, 49, 49)
-let squirtle = new Pokemon(1, "Squirtle", ['Water'], 44, 48, 65)
+let squirtle = new Pokemon(7, "Squirtle", ['Water'], 44, 48, 65)
+let pikachu = new Pokemon(25, "Pikachu", ['Electric'], 35, 55 , 40)
 
-// bulbasaur.atacar(squirtle)
+bulbasaur.atacar(squirtle)
 
 
